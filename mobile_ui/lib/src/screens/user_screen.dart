@@ -20,10 +20,10 @@ class _UserScreenState extends State<UserScreen> {
   final ScrollController _scrollController = ScrollController();
 
   scrollToTop() async {
-    await Future.delayed(const Duration(milliseconds: 250));
-    print('scrolling to top');
+    await Future.delayed(const Duration(milliseconds: 500));
+    //print('scrolling to top');
     _scrollController.animateTo(_scrollController.position.maxScrollExtent,
-        curve: Curves.easeIn, duration: const Duration(milliseconds: 250));
+        curve: Curves.easeInOut, duration: const Duration(milliseconds: 800));
   }
 
   @override

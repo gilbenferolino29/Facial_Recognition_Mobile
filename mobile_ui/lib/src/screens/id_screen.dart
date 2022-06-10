@@ -36,9 +36,11 @@ class _IdentificationScreenState extends State<IdentificationScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Stream<QuerySnapshot<Map<String, dynamic>>> _attendanceStream =
+        FirebaseFirestore.instance.collection('accounts').snapshots();
     Size size = MediaQuery.of(context).size;
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-        stream: FirebaseFirestore.instance.collection('accounts').snapshots(),
+        stream: _attendanceStream,
         builder: (context, snapshot) {
           return Scaffold(
               body: SafeArea(
