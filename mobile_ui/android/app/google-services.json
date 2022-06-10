@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1000930116471",
+    "project_id": "facial-recognition-syste-c82ae",
+    "storage_bucket": "facial-recognition-syste-c82ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000930116471:android:d64cd5b5aaf13cf06ed772",
+        "android_client_info": {
+          "package_name": "com.example.mobile_ui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1000930116471-tuvrh39226j36cv8idetp3our2gjjf2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA18Ku4XldR4x_hwdbR2QFawRIOO9Wt8WM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1000930116471-tuvrh39226j36cv8idetp3our2gjjf2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

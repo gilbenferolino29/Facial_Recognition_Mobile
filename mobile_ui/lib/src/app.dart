@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_ui/src/screens/id_screen.dart';
 //import 'package:mobile_ui/src/screens/home_screen.dart';
 import 'package:mobile_ui/src/screens/user_screen.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const UserScreen(),
+      home: const IdentificationScreen(),
     );
   }
 }
