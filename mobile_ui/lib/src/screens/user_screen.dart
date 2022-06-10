@@ -18,12 +18,11 @@ class UserScreen extends StatefulWidget {
 
 class _UserScreenState extends State<UserScreen> {
   final ScrollController _scrollController = ScrollController();
-  FirebaseFirestore firestore = FirebaseFirestore.instance;
 
   scrollToTop() async {
     await Future.delayed(const Duration(milliseconds: 250));
-    print('scrolling to bottom');
-    _scrollController.animateTo(_scrollController.position.minScrollExtent,
+    print('scrolling to top');
+    _scrollController.animateTo(_scrollController.position.maxScrollExtent,
         curve: Curves.easeIn, duration: const Duration(milliseconds: 250));
   }
 
@@ -58,6 +57,9 @@ class _UserScreenState extends State<UserScreen> {
       body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
           stream: _attendanceStream,
           builder: (context, snapshot) {
+            _attendanceStream.listen((snapshot) {
+              scrollToTop();
+            });
             if (snapshot.hasError) {
               print(snapshot.error);
               return Text('Something went wrong!');

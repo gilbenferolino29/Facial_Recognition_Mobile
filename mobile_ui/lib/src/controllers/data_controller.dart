@@ -1,13 +1,15 @@
 import 'dart:async';
-import 'package:http/http.dart' as http;
-import 'dart:convert' as convert;
+import 'dart:convert';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DataController {
   final StreamController<String?> _controller = StreamController();
+  FirebaseFirestore _firestore = FirebaseFirestore.instance;
   Stream<String?> get stream => _controller.stream;
   late List allAccounts;
   late List allAttendance;
-  late final user;
+
   DataController() {
     // setAllData();
   }
@@ -17,18 +19,18 @@ class DataController {
   //   setAllAttendance();
   // }
 
-//Single Gets
-  getSingleAccount(id) async {
-    final url = Uri.https(
-        'us-central1-facial-recognition-syste-c82ae.cloudfunctions.net',
-        'api/attendance/get/accountOf/' + id, {});
-    final response = await http.get(url);
-    final jsonRes = convert.jsonDecode(response.body);
-    user = jsonRes['data'];
+// //Single Gets
+//   getSingleAccount(id) async {
+//     final url = Uri.https(
+//         'us-central1-facial-recognition-syste-c82ae.cloudfunctions.net',
+//         'api/attendance/get/accountOf/' + id, {});
+//     final response = await http.get(url);
+//     final jsonRes = convert.jsonDecode(response.body);
+//     user = jsonRes['data'];
 
-    //print(user);
-    return response;
-  }
+//     //print(user);
+//     return response;
+//   }
 
 // //All Gets
 //   void setAllAccounts() async {
